@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Formulario de Registro">
+        <meta name="author" content="Diego Torres">
+        <link rel="stylesheet" href="css/estiloform.css" type="text/css" media="screen">
+        <title>Formulario de Registro</title>
+    </head>
+    <body>
+        <form action="validacion.php" method="POST">
+            <label for="nombre"> Nombre de Usuario: </label>
+            <input type="text" id="nombre" maxlength="50" required size="25" autofocus placeholder="Escribe tu nombre"/>
+            <label for="email"> E-mail: </label>
+            <input type="email" id="email" required placeholder="micorreo@gmail.com"/>
+            <label for="telefono"> Teléfono: </label>
+            <input type="tel" id="telefono" pattern="[0-9]{,10}" placeholder="XXXXXXXXXX" title="Escriba un número telefonico de 10 números"/>
+            <label for="Fecha"> Fecha de Nacimientos: </label>
+            <input name="fecha" type="date"/>
+            <label for="password1">Contraseña</label>
+            <input  id="pass1" type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}" title="La contraseña debe tener al menos una letra MAYÚSCULA, una minúscula y un número, con un minimo de 8 caracteres y un máximo de 16">
+            <label for="password2">Confirme su Contraseña</label>
+            <input  id="pass2" required type="password">
+            <input type="submit" value="Rellenar datos" title="Ingrese nuevamente su contraseña" onclick="validarpassword()"/>
+            <input type="reset" value="Limpiar">
+            <button onclick="location.href='/index.html'"> Cancelar </button>
+        </form>
+        <script>
+            function validarpassword(){
+            pass1 = document.getElementById('pass1');
+            pass2 = document.getElementById('pass2');
+            var tam = pass1.value.length;
+            console.log(tam);
+            // Verificamos si las constraseñas no coinciden 
+            if (pass1.value != pass2.value) {
+                // Si las constraseñas no coinciden mostramos un mensaje 
+                window.alert("Las contraseñas no coinciden, intente nuevamente");
+            }
+            }
+           
+        </script>
+        
+    </body>
+</html>
