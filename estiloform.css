@@ -1,0 +1,30 @@
+form {
+    padding: 20px;
+}
+label{
+    margin: 10px;
+    clear: both;
+    display: block;
+}
+input{
+    padding: 4px;
+    border: solid 1px #000000;
+}
+::placeholder, option, value{
+    color: #989b9cbd;
+    font-weight: bold;
+}
+*:focus {
+    border-color: #31a3dd;
+}
+input[type = "submit"]{
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #31a3dd;
+    border: solid 1px #ededed;
+    border-radius: 5px 0px 5px 0px;
+}
+input[type = "submit"]:hover {
+background-color: #82c8ea;
+}
